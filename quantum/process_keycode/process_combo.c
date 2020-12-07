@@ -53,16 +53,16 @@ typedef struct {
     uint16_t keycode;
 } queued_record_t;
 static uint8_t key_buffer_size = 0;
-static queued_record_t key_buffer[MAX_COMBO_LENGTH];
+static queued_record_t key_buffer[COMBO_KEY_BUFFER_LENGTH];
 
 typedef struct {
     uint16_t combo_index;
 } queued_combo_t;
 static uint8_t combo_buffer_write= 0;
 static uint8_t combo_buffer_read = 0;
-static queued_combo_t combo_buffer[MAX_COMBO_LENGTH];
+static queued_combo_t combo_buffer[COMBO_BUFFER_LENGTH];
 
-#define INCREMENT_MOD(i) i = (i + 1) % MAX_COMBO_LENGTH
+#define INCREMENT_MOD(i) i = (i + 1) % COMBO_BUFFER_LENGTH
 
 #define COMBO_KEY_POS ((keypos_t){.col=254, .row=254})
 
@@ -445,7 +445,7 @@ bool process_combo(uint16_t keycode, keyrecord_t *record) {
 #   endif
 #endif
 
-        if (key_buffer_size < MAX_COMBO_LENGTH) {
+        if (key_buffer_size < COMBO_KEY_BUFFER_LENGTH) {
             key_buffer[key_buffer_size++] = (queued_record_t){
                 .record = *record,
                 .keycode = keycode,
