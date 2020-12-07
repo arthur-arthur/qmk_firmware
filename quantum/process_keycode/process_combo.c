@@ -327,6 +327,7 @@ static bool process_single_combo(combo_t *combo, uint16_t keycode, keyrecord_t *
 
                 // disable readied combos that overlap with this combo
                 combo_t *drop = NULL;
+                uint8_t write_index = combo_buffer_write;
                 for (uint8_t combo_buffer_i = combo_buffer_read;
                         combo_buffer_i != combo_buffer_write;
                         INCREMENT_MOD(combo_buffer_i)) {
@@ -334,27 +335,37 @@ static bool process_single_combo(combo_t *combo, uint16_t keycode, keyrecord_t *
                     queued_combo_t *qcombo = &combo_buffer[combo_buffer_i];
                     combo_t *buffered_combo = &key_combos[qcombo->combo_index];
 
-                    if ((drop = overlaps(buffered_combo, combo))) {
+                    // check for overlaps if current combo wasn't yet dropped
+                    if ((drop != combo) && (drop = overlaps(buffered_combo, combo))) {
                         drop->disabled = true;
-                        if (drop == combo) {
-                            // stop checking for overlaps if dropped combo was current combo.
-                            break;
-                        } else if (combo_buffer_i == combo_buffer_read && drop == buffered_combo) {
-                            /* Drop the disabled buffered combo from the buffer if
-                             * it is in the beginning of the buffer. */
-                            INCREMENT_MOD(combo_buffer_read);
+
+                        if (drop == buffered_combo) {
+                            if (combo_buffer_i == combo_buffer_read) {
+                                // If we are at start, just increment 'read'
+                                INCREMENT_MOD(combo_buffer_read);
+                            } else {
+                                // Not at start, so save current index for compacting
+                                write_index = combo_buffer_i;
+                            }
                         }
                     }
 
+                    if (drop != buffered_combo && write_index != combo_buffer_write) {
+                        // compact buffer
+                        combo_buffer[write_index] = combo_buffer[combo_buffer_i];
+                        INCREMENT_MOD(write_index);
+                    }
                 }
 
                 if (drop != combo) {
                     // save this combo to buffer
-                    combo_buffer[combo_buffer_write] = (queued_combo_t){
+                    combo_buffer[write_index] = (queued_combo_t){
                         .combo_index=combo_index,
                     };
-                    INCREMENT_MOD(combo_buffer_write);
+                    INCREMENT_MOD(write_index);
+                    combo_buffer_write = write_index;
                 }
+
             } // if timer elapsed end
 
         }
