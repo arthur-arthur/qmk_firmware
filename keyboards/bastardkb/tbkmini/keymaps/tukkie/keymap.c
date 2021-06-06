@@ -16,6 +16,7 @@
  */
 
 #include QMK_KEYBOARD_H
+#include "g/keymap_combo.h"
 
 // Layer declarations
 #define _mBASE 0
@@ -160,84 +161,84 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
-//chordings
+// //chordings
 
 
-const uint16_t PROGMEM p_g[] = {KC_P, KC_G, COMBO_END};
-const uint16_t PROGMEM t_d[] = {KC_T, KC_D, COMBO_END};
+// const uint16_t PROGMEM p_g[] = {KC_P, KC_G, COMBO_END};
+// const uint16_t PROGMEM t_d[] = {KC_T, KC_D, COMBO_END};
 
-const uint16_t PROGMEM lgui_z[] = { KC_LGUI, KC_Z, COMBO_END};
-const uint16_t PROGMEM x_c[] = {KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM v_b[] = {KC_V, KC_B, COMBO_END};
-
-
-enum combos { 
-
-  P_G_COMBO,
-  T_D_COMBO,
-  LGUI_Z_COMBO,
-  X_C_COMBO,
-  V_B_COMBO,
-    W_F_COMBO,
-  RALT_A_COMBO,
-  A_R_COMBO,
-  R_S_COMBO,
-  S_T_COMBO,
-  F_T_COMBO,
-  S_V_COMBO,
-  T_B_COMBO,
-  P_D_COMBO,
-  C_V_COMBO,
-};
-
-const uint16_t PROGMEM t_d_combo[] = { KC_T, KC_D, COMBO_END};
-const uint16_t PROGMEM lgui_z_combo[] = { KC_LGUI, KC_Z, COMBO_END};
-const uint16_t PROGMEM x_c_combo[] = { KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM v_b_combo[] = { KC_V, KC_B, COMBO_END};
-const uint16_t PROGMEM w_f_combo[] = { KC_W, KC_F, COMBO_END};
-const uint16_t PROGMEM ralt_a_combo[] = { KC_RALT, KC_A, COMBO_END};
-const uint16_t PROGMEM a_r_combo[] = { KC_A, KC_R, COMBO_END};
-const uint16_t PROGMEM r_s_combo[] = { KC_R, KC_S, COMBO_END};
-const uint16_t PROGMEM s_t_combo[] = { KC_S, KC_T, COMBO_END};
-const uint16_t PROGMEM f_t_combo[] = { KC_F, KC_T, COMBO_END};
-const uint16_t PROGMEM s_v_combo[] = { KC_S, KC_V, COMBO_END};
-const uint16_t PROGMEM t_b_combo[] = { KC_T, KC_B, COMBO_END};
-const uint16_t PROGMEM p_d_combo[] = { KC_P, KC_D, COMBO_END};
-const uint16_t PROGMEM c_v_combo[] = { KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM p_g_combo[] = { KC_P, KC_G, COMBO_END};
+// const uint16_t PROGMEM lgui_z[] = { KC_LGUI, KC_Z, COMBO_END};
+// const uint16_t PROGMEM x_c[] = {KC_X, KC_C, COMBO_END};
+// const uint16_t PROGMEM v_b[] = {KC_V, KC_B, COMBO_END};
 
 
-combo_t key_combos[COMBO_COUNT] = { 
+// enum combos { 
 
-  [P_G_COMBO] = COMBO(p_g_combo, KC_TAB),
-  [T_D_COMBO] = COMBO(t_d_combo, KC_DEL),
-  [LGUI_Z_COMBO] = COMBO_ACTION(lgui_z_combo),
-  [X_C_COMBO] = COMBO_ACTION(x_c_combo),
-  [V_B_COMBO] = COMBO_ACTION(v_b_combo),
-  [W_F_COMBO] = COMBO_ACTION(w_f_combo),
-  [RALT_A_COMBO] = COMBO(ralt_a_combo, KC_CAPS),
-  [A_R_COMBO] = COMBO_ACTION(a_r_combo),
-  [R_S_COMBO] = COMBO_ACTION(r_s_combo),
-  [S_T_COMBO] = COMBO_ACTION(s_t_combo),
-  [F_T_COMBO] = COMBO(f_t_combo, KC_LCBR),
-  [S_V_COMBO] = COMBO(s_v_combo, KC_LCBR),
-  [T_B_COMBO] = COMBO(t_b_combo, KC_LPRN),
-  [P_D_COMBO] = COMBO(p_d_combo, KC_LBRC),
-  [C_V_COMBO] = COMBO_ACTION(c_v_combo),
+//   P_G_COMBO,
+//   T_D_COMBO,
+//   LGUI_Z_COMBO,
+//   X_C_COMBO,
+//   V_B_COMBO,
+//     W_F_COMBO,
+//   RALT_A_COMBO,
+//   A_R_COMBO,
+//   R_S_COMBO,
+//   S_T_COMBO,
+//   F_T_COMBO,
+//   S_V_COMBO,
+//   T_B_COMBO,
+//   P_D_COMBO,
+//   C_V_COMBO,
+// };
 
-};
+// const uint16_t PROGMEM t_d_combo[] = { KC_T, KC_D, COMBO_END};
+// const uint16_t PROGMEM lgui_z_combo[] = { KC_LGUI, KC_Z, COMBO_END};
+// const uint16_t PROGMEM x_c_combo[] = { KC_X, KC_C, COMBO_END};
+// const uint16_t PROGMEM v_b_combo[] = { KC_V, KC_B, COMBO_END};
+// const uint16_t PROGMEM w_f_combo[] = { KC_W, KC_F, COMBO_END};
+// const uint16_t PROGMEM ralt_a_combo[] = { KC_RALT, KC_A, COMBO_END};
+// const uint16_t PROGMEM a_r_combo[] = { KC_A, KC_R, COMBO_END};
+// const uint16_t PROGMEM r_s_combo[] = { KC_R, KC_S, COMBO_END};
+// const uint16_t PROGMEM s_t_combo[] = { KC_S, KC_T, COMBO_END};
+// const uint16_t PROGMEM f_t_combo[] = { KC_F, KC_T, COMBO_END};
+// const uint16_t PROGMEM s_v_combo[] = { KC_S, KC_V, COMBO_END};
+// const uint16_t PROGMEM t_b_combo[] = { KC_T, KC_B, COMBO_END};
+// const uint16_t PROGMEM p_d_combo[] = { KC_P, KC_D, COMBO_END};
+// const uint16_t PROGMEM c_v_combo[] = { KC_C, KC_V, COMBO_END};
+// const uint16_t PROGMEM p_g_combo[] = { KC_P, KC_G, COMBO_END};
 
 
-void process_combo_event(uint16_t combo_index, bool p) {
-  switch(combo_index) {
+// combo_t key_combos[COMBO_COUNT] = { 
 
-    case LGUI_Z_COMBO: if (p) {tap_code16(LGUI(KC_Z));} break;
-    case X_C_COMBO: if (p) {tap_code16(LGUI(KC_C));} break;
-    case V_B_COMBO: if (p) {tap_code16(LGUI(KC_V));} break;
-    case W_F_COMBO: if (p) {tap_code16(LGUI(KC_F));} break;
-    case A_R_COMBO: if (p) {tap_code16(LGUI(KC_A));} break;
-    case R_S_COMBO: if (p) {tap_code16(LGUI(KC_S));} break;
-    case S_T_COMBO: if (p) {tap_code16(LGUI(KC_T));} break;
-    case C_V_COMBO: if (p) {tap_code16(LGUI(KC_V));} break;
-  }
-}
+//   [P_G_COMBO] = COMBO(p_g_combo, KC_TAB),
+//   [T_D_COMBO] = COMBO(t_d_combo, KC_DEL),
+//   [LGUI_Z_COMBO] = COMBO_ACTION(lgui_z_combo),
+//   [X_C_COMBO] = COMBO_ACTION(x_c_combo),
+//   [V_B_COMBO] = COMBO_ACTION(v_b_combo),
+//   [W_F_COMBO] = COMBO_ACTION(w_f_combo),
+//   [RALT_A_COMBO] = COMBO(ralt_a_combo, KC_CAPS),
+//   [A_R_COMBO] = COMBO_ACTION(a_r_combo),
+//   [R_S_COMBO] = COMBO_ACTION(r_s_combo),
+//   [S_T_COMBO] = COMBO_ACTION(s_t_combo),
+//   [F_T_COMBO] = COMBO(f_t_combo, KC_LCBR),
+//   [S_V_COMBO] = COMBO(s_v_combo, KC_LCBR),
+//   [T_B_COMBO] = COMBO(t_b_combo, KC_LPRN),
+//   [P_D_COMBO] = COMBO(p_d_combo, KC_LBRC),
+//   [C_V_COMBO] = COMBO_ACTION(c_v_combo),
+
+// };
+
+
+// void process_combo_event(uint16_t combo_index, bool p) {
+//   switch(combo_index) {
+
+//     case LGUI_Z_COMBO: if (p) {tap_code16(LGUI(KC_Z));} break;
+//     case X_C_COMBO: if (p) {tap_code16(LGUI(KC_C));} break;
+//     case V_B_COMBO: if (p) {tap_code16(LGUI(KC_V));} break;
+//     case W_F_COMBO: if (p) {tap_code16(LGUI(KC_F));} break;
+//     case A_R_COMBO: if (p) {tap_code16(LGUI(KC_A));} break;
+//     case R_S_COMBO: if (p) {tap_code16(LGUI(KC_S));} break;
+//     case S_T_COMBO: if (p) {tap_code16(LGUI(KC_T));} break;
+//     case C_V_COMBO: if (p) {tap_code16(LGUI(KC_V));} break;
+//   }
+// }
