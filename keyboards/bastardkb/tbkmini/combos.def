@@ -1,11 +1,4 @@
 //--------------------------------
-// strings
-//--------------------------------
-
-SUBS(gj,            "arthurleloup@gmail.com",                KC_G, KC_J)
-SUBS(dh,            SS_TAP(X_ENT)SS_TAP(X_ENT)"Groetjes,"SS_TAP(X_ENT)"Arthur", KC_D, KC_H)
-
-//--------------------------------
 // left side
 //--------------------------------
 
@@ -13,12 +6,15 @@ SUBS(xc,            SS_LCTL("c"),                                           KC_X
 SUBS(cv,            SS_LCTL("v"),                                           KC_C, KC_V)
 SUBS(ar,            SS_LCTL("a"),                                           BE_A, BE_R)
 SUBS(rs,            SS_LCTL("s"),                                           KC_R, KC_S)
-SUBS(st,            SS_LCTL("t"),                                           KC_S, KC_T)
-SUBS(guiz,          SS_LCTL("z"),                                           KC_LCTL, BE_Z)
+SUBS(st,            SS_LCTL("z"),                                           KC_S, KC_T)
+SUBS(altz,          SS_LCTL("t"),                                           KC_LCTL, BE_Z)
 SUBS(zx,            SS_LCTL("x"),                                           BE_Z, BE_X)
 SUBS(wf,            SS_LCTL("f"),                                           BE_W, BE_F)
 SUBS(escq,          SS_DOWN(X_LALT)SS_TAP(X_F4)SS_UP(X_LALT),               KC_ESC, BE_Q)
 SUBS(cs,            SS_TAP(X_END)SS_TAP(X_ENT)SS_LCTL("v"),                 BE_C, BE_S)
+
+SUBS(wfp,           SS_DOWN(X_LCTL)SS_DOWN(X_LSFT)SS_TAP(X_F11)SS_UP(X_LSFT)SS_UP(X_LCTL),  BE_W, BE_F, BE_P)
+SUBS(rst,           SS_DOWN(X_LSFT)SS_TAP(X_ENT)SS_UP(X_LSFT),              BE_R, BE_S, BE_T)
 
 COMB(pg,            KC_TAB,                                                 BE_P, BE_G)
 COMB(td,            KC_DEL,                                                 BE_T, BE_D)
@@ -59,4 +55,15 @@ SUBS(ecomm,         SS_DOWN(X_LCTL)SS_TAP(X_DEL)SS_UP(X_LCTL),              BE_E
 //brackets
 COMB(ni,            BE_RPRN,                                                BE_N, BE_I)
 COMB(ly,            BE_RBRC,                                                BE_L, BE_Y)
-COMB(mdot,          BE_RCBRw,                                                BE_M, BE_DOT)
+COMB(mdot,          BE_RCBRw,                                               BE_M, BE_DOT)
+
+//--------------------------------
+// split combos
+//--------------------------------
+
+SUBS(gj,            "arthurleloup@gmail.com",                               KC_G, KC_J)
+SUBS(dh,            SS_TAP(X_ENT)SS_TAP(X_ENT)"Groetjes,"SS_TAP(X_ENT)"Arthur", KC_D, KC_H)
+
+COMB(tn,            BE_QUOT,                                                BE_T, BE_N)
+COMB(se,            BE_DQUO,                                                BE_S, BE_E)
+SUBS(ri,            "%>%",                                                  BE_R, BE_I)

@@ -24,7 +24,7 @@ SPLIT_KEYBOARD = yes
 TAP_DANCE_ENABLE = no
 LTO_ENABLE = yes
 
-AUTO_SHIFT_ENABLE = yes
+AUTO_SHIFT_ENABLE = no
 
 VPATH  +=  keyboards/gboards/
 COMBO_ENABLE = yes
