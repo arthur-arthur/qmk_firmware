@@ -1,0 +1,67 @@
+//--------------------------------
+// strings
+//--------------------------------
+
+SUBS(gj,            "arthurleloup"SS_TAP(X_NUBS)"gmail.com",                KC_G, KC_J)
+SUBS(dh,            SS_TAP(X_ENT)SS_TAP(X_ENT)"Groetjes,"SS_TAP(X_ENT)"Arthur", KC_D, KC_H)
+
+//--------------------------------
+// left side
+//--------------------------------
+
+SUBS(xc,            SS_LGUI("c"),                                           KC_X, KC_C)
+SUBS(cv,            SS_LGUI("v"),                                           KC_C, KC_V)
+SUBS(ar,            SS_LGUI("a"),                                           BE_A, BE_R)
+SUBS(rs,            SS_LGUI("s"),                                           KC_R, KC_S)
+SUBS(st,            SS_LGUI("t"),                                           KC_S, KC_T)
+SUBS(guiz,          SS_LGUI("z"),                                           KC_LGUI, BE_Z)
+SUBS(zx,            SS_LGUI("x"),                                           BE_Z, BE_X)
+SUBS(wf,            SS_LGUI("f"),                                           BE_W, BE_F)
+SUBS(escq,          SS_LGUI("q"),                                           KC_ESC, BE_Q)
+SUBS(cs,            SS_DOWN(X_LGUI)SS_TAP(X_RIGHT)SS_UP(X_LALT)SS_DOWN(X_ENT)SS_UP(X_ENT)SS_LGUI("v"), BE_C, BE_S)
+
+COMB(pg,            KC_TAB,                                                 BE_P, BE_G)
+COMB(td,            KC_DEL,                                                 BE_T, BE_D)
+COMB(alta,          KC_CAPS,                                                KC_RALT, BE_A)
+
+// brackets
+COMB(rt,            BE_LPRN,                                                BE_R, BE_T)
+COMB(wp,            BE_LBRC,                                                BE_W, BE_P)
+COMB(xv,            BE_LCBR,                                                BE_X, BE_V)
+
+// copy right hand functionality
+COMB(altgui,        KC_SPC,                                                 KC_LGUI, KC_RALT)
+COMB(tv,            KC_BSPC,                                                BE_T, BE_V)
+COMB(db,            KC_ENT,                                                 BE_D, BE_B)
+
+//win
+SUBS(rs_w,          SS_LCTL("s"),                                           BE_Rw, BE_Sw)
+
+
+
+//--------------------------------
+// right side
+//--------------------------------
+
+//nav
+COMB(ne,            KC_LEFT,                                                BE_N, BE_E)
+COMB(ei,            KC_RIGHT,                                               BE_E, BE_I)
+SUBS(lu,            SS_DOWN(X_LALT)SS_TAP(X_LEFT)SS_UP(X_LALT),             BE_L, BE_U)
+SUBS(yexcl,         SS_DOWN(X_LALT)SS_TAP(X_RIGHT)SS_UP(X_LALT),            BE_Y, BE_EXLM)
+COMB(uy,            KC_UP,                                                  BE_U, BE_Y)
+COMB(dotcom,        KC_DOWN,                                                BE_COMM, BE_DOT)
+SUBS(eio,           SS_DOWN(X_LGUI)SS_TAP(X_RIGHT)SS_UP(X_LGUI),            BE_E, BE_I, BE_O)
+SUBS(nei,           SS_DOWN(X_LGUI)SS_TAP(X_LEFT)SS_UP(X_LGUI),             BE_N, BE_E, BE_I)
+SUBS(mdotcom,       SS_DOWN(X_LGUI)SS_TAP(X_DOWN)SS_UP(X_LGUI),             BE_M, BE_COMM, BE_DOT)
+SUBS(luy,           SS_DOWN(X_LGUI)SS_TAP(X_UP)SS_UP(X_LGUI),               BE_L, BE_U, BE_Y)
+SUBS(km,            SS_DOWN(X_LGUI)SS_TAP(X_BSPC)SS_UP(X_LGUI),             BE_K, BE_M)
+SUBS(mcom,          SS_LCTL("k"),                                           BE_M, BE_COMM)
+SUBS(hn,            SS_DOWN(X_LGUI)SS_TAP(X_LEFT)SS_UP(X_LGUI)SS_LSFT(SS_DOWN(X_LSFT)SS_DOWN(X_LGUI)SS_TAP(X_RIGHT)SS_UP(X_LGUI)), BE_H, BE_N)
+
+SUBS(mn,            SS_DOWN(X_LALT)SS_TAP(X_BSPC)SS_UP(X_LALT),             BE_M, BE_N)
+SUBS(ecomm,         SS_DOWN(X_LALT)SS_TAP(X_DEL)SS_UP(X_LALT),              BE_E, BE_COMM)
+
+//brackets
+COMB(ni,            BE_RPRN,                                                BE_N, BE_I)
+COMB(ly,            BE_RBRC,                                                BE_L, BE_Y)
+COMB(mdot,          BE_RCBR,                                                BE_M, BE_DOT)

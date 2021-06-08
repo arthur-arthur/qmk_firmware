@@ -1,3 +1,5 @@
+#include "keymap_belgian.h"
+
 // Keymap helpers
 
 #define K_ENUM(name, key, ...) name,

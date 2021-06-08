@@ -34,6 +34,7 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
+#define BE_AT   KC_NUBS // @ osx
 #define BE_SUP2 KC_GRV  // ²
 #define BE_AMPR KC_1    // &
 #define BE_EACU KC_2    // é
@@ -75,6 +76,7 @@
 #define BE_MICR KC_NUHS // µ
 // Row 4
 #define BE_LABK KC_NUBS // <
+#define BE_LT   KC_GRV  // < osx
 #define BE_W    KC_Z    // W
 #define BE_X    KC_X    // X
 #define BE_C    KC_C    // C
@@ -100,6 +102,7 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
+#define BE_HASH S(KC_NUBS) // # osx
 #define BE_SUP3 S(BE_SUP2) // ³
 #define BE_1    S(BE_AMPR) // 1
 #define BE_2    S(BE_EACU) // 2
@@ -121,6 +124,7 @@
 #define BE_PND  S(BE_MICR) // £
 // Row 4
 #define BE_RABK S(BE_LABK) // >
+#define BE_GT   S(KC_GRV)  // > osx
 #define BE_QUES S(BE_COMM) // ?
 #define BE_DOT  S(BE_SCLN) // .
 #define BE_SLSH S(BE_COLN) // /
@@ -140,32 +144,41 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
 // Row 1
-#define BE_PIPE ALGR(BE_AMPR) // |
-#define BE_AT   ALGR(BE_EACU) // @
-#define BE_HASH ALGR(BE_DQUO) // #
-#define BE_CIRC ALGR(BE_SECT) // ^
-#define BE_LCBR ALGR(BE_CCED) // {
-#define BE_RCBR ALGR(BE_AGRV) // }
+#define BE_PIPEw ALGR(BE_AMPR)  // |
+#define BE_PIPE ALGR(S(KC_L))   // | osx
+#define BE_ATw   ALGR(BE_EACU) // @
+#define BE_HASHw ALGR(BE_DQUO) // #
+#define BE_CIRC ALGR(BE_SECT)   // ^
+#define BE_LCBR ALGR(KC_5)      // {
+#define BE_LCBRw ALGR(BE_CCED)  // {    
+#define BE_RCBR ALGR(KC_MINS)   // }
+#define BE_RCBRw ALGR(BE_AGRV)  // }
 // Row 2
-#define BE_EURO ALGR(BE_E)    // €
+#define BE_EURO ALGR(BE_E)      // € 
+#define BE_EUR ALGR(KC_RBRC)    // €
+//#define BE_LBRC ALGR(S(KC_5))   // [ osx
+//#define BE_RBRC ALGR(S(KC_MINS))// ] osx
 #define BE_LBRC ALGR(BE_DCIR) // [
 #define BE_RBRC ALGR(BE_DLR)  // ]
 // Row 3
-#define BE_ACUT ALGR(BE_UGRV) // ´ (dead)
-#define BE_GRV  ALGR(BE_MICR) // ` (dead)
+#define BE_ACUT ALGR(BE_UGRV)   // ´ (dead)
+#define BE_GRVw ALGR(BE_MICR)   // ` (dead)
+#define BE_GRV KC_NUHS          // ` (dead) osx
 // Row 4
-#define BE_BSLS ALGR(BE_LABK) // (backslash)
-#define BE_TILD ALGR(BE_EQL)  // ~
+#define BE_BSLSw ALGR(BE_LABK)  // (backslash)
+#define BE_BSLS ALGR(S(KC_DOT)) // (backslash) osx
+#define BE_TILDw ALGR(BE_EQL)   // ~
+#define BE_TILD ALGR(KC_N)      // ~ osx
 
 // DEPRECATED
-#define BE_AMP  BE_AMPR
-#define BE_APOS BE_QUOT
-#define BE_PARA BE_SECT
-#define BE_MU   BE_MICR
-#define BE_LESS BE_LABK
-#define BE_OVRR BE_DEG
-#define BE_UMLT BE_DIAE
-#define BE_GRTR BE_RABK
-#define BE_LSBR BE_LBRC
-#define BE_RSBR BE_RBRC
-#define BE_TILT BE_TILD
+// #define BE_AMP  BE_AMPR
+// #define BE_APOS BE_QUOT
+// #define BE_PARA BE_SECT
+// #define BE_MU   BE_MICR
+// #define BE_LESS BE_LABK
+// #define BE_OVRR BE_DEG
+// #define BE_UMLT BE_DIAE
+// #define BE_GRTR BE_RABK
+// #define BE_LSBR BE_LBRC
+// #define BE_RSBR BE_RBRC
+// #define BE_TILT BE_TILD
