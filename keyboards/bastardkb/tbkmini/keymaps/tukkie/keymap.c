@@ -29,6 +29,7 @@
 // Thumb keys
 #define SPC_NAV LT(NAV, KC_SPC)
 #define BSPC_SYM LT(SYM, KC_BSPC)
+#define OSM_S OSM(MOD_LSFT)
 
 // win nav
 #define LEFTW LCTL(KC_LEFT)
@@ -44,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL,    BE_Z,    BE_X,    BE_C,    BE_V,    BE_B,                         BE_K,    BE_M, BE_COMM,  BE_DOT, BE_QUES, BE_MINS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        BSPC_SYM,  KC_LSFT, MO(NUM),     MO(FN),  KC_ENT,  SPC_NAV
+                                        BSPC_SYM,   OSM_S, TT(NUM),     MO(FN),  KC_ENT,  SPC_NAV
                                    //`-----------------------------|  |----------------------------
 
   ),
@@ -77,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [NUM] = LAYOUT(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                      BE_PLUS,    BE_7,    BE_8,    BE_9, BE_ASTR, XXXXXXX,
+      XXXXXXX,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                      BE_PLUS,    BE_7,    BE_8,    BE_9, BE_ASTR, BE_COMM,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      BE_MINS,    BE_4,    BE_5,    BE_6, BE_SLSH, BE_COLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -90,11 +91,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [FN] = LAYOUT(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, KC_BTN1, KC_MS_U, KC_BTN2, KC_BRIU,                      KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      RGB_TOG, RGB_MOD, KC_BTN1, KC_MS_U, KC_BTN2, KC_BRIU,                      KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, KC_BRID,                      KC_VOLD, KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      BL_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,   _______, _______, _______
                                       //`--------------------------'  `--------------------------'
